@@ -6,8 +6,6 @@ jobs:
     name: Greeting
     runs-on: ubuntu-latest
     steps:
-      - run: pip install -U pip
-      - run: pip3 install pytest
-      - run: pip3 install coverage
-      - run: pip3 install pytest-cov
+      - run: pip3 install -U pip
+      - run: pip3 install -r requirements.txt
       - run: python3 -m pytest --cov --cov-branch -v
