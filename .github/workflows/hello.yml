@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-        apt  install tree 
+        sudo apt install -y tree 
         pwd
         ls -l
         tree . -a
