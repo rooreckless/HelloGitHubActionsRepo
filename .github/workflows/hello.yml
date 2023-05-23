@@ -6,7 +6,7 @@ jobs:
     name: Greeting
     runs-on: ubuntu-latest
     steps:
-      - run: |
+      run: |
         pwd
         ls -l
         pip install -U pip
