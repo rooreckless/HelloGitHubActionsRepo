@@ -6,11 +6,11 @@ jobs:
     name: Greeting
     runs-on: ubuntu-latest
     steps:
-      - run: pwd
-      - run: ls -l
-      - run: pip install -U pip
-      - run: cd ../../
-      - run: pwd
-      - run: ls -l
-      # - run: pip install -r ../requirements.txt
-      - run: python3 -m pytest --cov --cov-branch -v
+      - run: |
+        apt  install tree 
+        pwd
+        ls -l
+        tree . -a
+        pip install -U pip
+        pip install -r ../requirements.txt
+        python3 -m pytest --cov --cov-branch -v
