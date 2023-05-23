@@ -19,5 +19,6 @@ jobs:
           tree . -a
       - run: |
           pip install -U pip
-          pip install -r requirements.txt
+          pip3 install coverage
+          pip3 install pytest-cov
           python3 -m pytest --cov --cov-branch -v
