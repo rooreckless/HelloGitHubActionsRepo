@@ -17,8 +17,7 @@ jobs:
       - run: |
           sudo apt install -y tree
           tree . -a
-      - run: |
-          pip install -U pip
-          pip3 install coverage
-          pip3 install pytest-cov
-          python3 -m pytest --cov --cov-branch -v
+      - run: pip install -U pip
+      - run: pip3 install coverage
+      - run: pip3 install pytest-cov
+      - run: python3 -m pytest --cov --cov-branch -v
