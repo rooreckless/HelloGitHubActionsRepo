@@ -11,5 +11,8 @@ jobs:
       - run: |
           ls -l
       - run: |
+          sudo apt install -y tree
+          tree . -a
+      - run: |
           pip install -U pip
           pip install -r ../requirements.txt
