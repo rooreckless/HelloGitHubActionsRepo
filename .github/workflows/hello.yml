@@ -5,11 +5,24 @@ jobs:
   build:
     name: piplist
     runs-on: ubuntu-latest
+#     steps:
+#       - name: before pip list
+#         run: pip list
+#       - uses: actions/setup-python@v4
+#         with:
+#           python-version: '3.9'
+#       - name: after action pip list
+#         run: pip list
     steps:
-      - name: before pip list
-        run: pip list
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
-      - name: after action pip list
-        run: pip list
+    - name: before pip list
+      run: pip list
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        cache: 'pip' # caching pip dependencies
+    - name: after 3.9 list
+      run: pip list
+    - run: pip install -r requirements.txt
+    - name: after pip install list
+      run: pip list
