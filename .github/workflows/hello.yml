@@ -16,6 +16,8 @@ jobs:
       - run: |
           pwd
           ls -l
+      - run: pwd
+      - run: ls -l
       - run: sudo apt install -y tree
       - run: tree . -a
       - uses: actions/setup-python@v4
