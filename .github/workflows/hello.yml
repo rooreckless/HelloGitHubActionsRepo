@@ -9,6 +9,7 @@ jobs:
       - run: pip install -U pip
       - run: pip install pytest
       - run: pip list
+      - uses: actions/checkout@v3
       - run: mkdir artifact_pip
       - run: pip freeze > aritifact_pip/freezed.txt
       - uses: actions/upload-artifact@v2
