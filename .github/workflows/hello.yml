@@ -1,35 +1,10 @@
-name: Hello, World!
+name: check pip
 on: push
 
 jobs:
   build:
-    name: Greeting
+    name: piplist
     runs-on: ubuntu-latest
     steps:
-       # ↓以下を書き換えています。
-       # runは上から順番に実行されます。
-      - name: 1 pyver check 1st
-        run: python3 --version
-      - name: 2 pwd_and_ls
-        run: |
-          pwd
-          ls -l
-          # コメントアウトの仕方です。
-      - name: 3 pwd | ls
-        run: |
-          pwd
-          ls -l
-      - name: 4 pwd
-        run: pwd
-      - name: 5 ls
-        run: ls -l
-      - name: 6 install tree
-        run: sudo apt install -y tree
-      - name: 7 tree
-        run: tree . -a
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'  # 使用するPythonのバージョンを指定
-      - name: 8 pyver check 2nd
-        run: python3 --version
-      - run: pip3 list
+      - run: pip install -U pip
+      - run: pip install pytest
