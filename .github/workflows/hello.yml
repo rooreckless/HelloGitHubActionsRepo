@@ -1,25 +1,3 @@
-# name: check pip
-# on: push
-
-# jobs:
-#   build:
-#     name: piplist
-#     runs-on: ubuntu-latest
-#     steps:
-#       - run: pip install -U pip
-#       - run: pip install pytest
-#       - run: pip list
-#       - uses: actions/checkout@v3
-#       # - run: |
-#       #    mkdir artfiactpip
-#       #    pip freeze > artfiactpip/freezed.txt
-#       #    ls -l
-#       - run: mkdir artfiactpip
-#       - run: pip freeze > artfiactpip/freezed.txt
-#       - uses: actions/upload-artifact@v2
-#         with:
-#           name: artfiactpip
-#           path: artfiactpip
 name: check pip
 on: push
 
@@ -32,9 +10,13 @@ jobs:
       - run: pip install pytest
       - run: pip list
       - uses: actions/checkout@v3
-      - run: mkdir artfiactpip
-      - run: pip freeze > artfiactpip/freezed.txt
+      #--以下のrunの中は2つのrunの行にするとエラーになります。--
+      #- run: |
+      #   mkdir artifactpip
+      #   pip freeze > artifactpip/freezed.txt
+      - run: mkdir artifactpip
+      - run: pip freeze > artifactpip/freezed.txt
       - uses: actions/upload-artifact@v2
         with:
-          name: artfiactpip
-          path: artfiactpip
+          name: artifactpip
+          path: artifactpip
