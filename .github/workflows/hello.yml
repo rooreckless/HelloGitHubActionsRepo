@@ -10,11 +10,11 @@ jobs:
        #runは上から順番に実行されます。
       - run: python3 --version
       - run: |
-        : # コメントアウトの仕方です。
-        : # 以下の2行は順番どおりに実行されるとは限りません。
-        pwd
-        ls -l
-        : # treeコマンドのインストールと使用は必ずrunで分割して実行する必要があります。
+          : # コメントアウトの仕方です。
+          : # 以下の2行は順番どおりに実行されるとは限りません。
+          pwd
+          ls -l
+          : # treeコマンドのインストールと使用は必ずrunで分割して実行する必要があります。
       - run: sudo apt install -y tree
       - run: tree . -a
       - uses: actions/setup-python@v4
