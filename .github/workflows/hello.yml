@@ -8,3 +8,5 @@ jobs:
     steps:
       - run: pip install -U pip
       - run: pip install pytest
+      - run: pip list
+      - run: pip3 list
