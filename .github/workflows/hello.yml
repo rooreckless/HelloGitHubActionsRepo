@@ -10,9 +10,12 @@ jobs:
       - run: pip install pytest
       - run: pip list
       - uses: actions/checkout@v3
-      - run: mkdir artifact_pip
-      - run: pip freeze > aritifact_pip/freezed.txt
+      - run: |
+          mkdir artfiactpip
+          pip freeze > artfiactpip/freezed.txt
+      # - run: mkdir artfiactpip
+      # - run: pip freeze > artfiactpip/freezed.txt
       - uses: actions/upload-artifact@v2
         with:
-          name: aritifact_pip
-          path: aritifact_pip
+          name: artfiactpip
+          path: artfiactpip
