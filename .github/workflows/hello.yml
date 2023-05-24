@@ -6,7 +6,7 @@ jobs:
     name: piplist
     runs-on: ubuntu-latest
     steps:
+      - run: pip list
       - run: pip install -U pip
       - run: pip install pytest
       - run: pip list
-      - run: pip3 list
