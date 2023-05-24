@@ -1,23 +1,23 @@
 name: Hello, World!
-on: push
+  on: push
 
-jobs:
-  build:
-    name: Greeting
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'  # 使用するPythonのバージョンを指定  
-      - run: |
+  jobs:
+    build:
+      name: Greeting
+      runs-on: ubuntu-latest
+      steps:
+         #↓以下を書き換えています。
+         #runは上から順番に実行されます。
+        - run: python3 --version
+        - run: |
+          #以下の2行は順番どおりに実行されるとは限りません。
           pwd
-      - run: |
           ls -l
-      - run: |
-          sudo apt install -y tree
-          tree . -a
-      - run: pip install -U pip
-      - run: pip3 install coverage
-      - run: pip3 install pytest-cov
-      - run: python3 -m pytest --cov --cov-branch -v
+          #treeコマンドのインストールと使用は必ずrunで分割して実行する必要があります。
+        - run: sudo apt install -y tree
+        - run: tree . -a
+        - uses: actions/setup-python@v4
+          with:
+            python-version: '3.10'  # 使用するPythonのバージョンを指定
+        - run: python3 --version
+        - run: pip3 list
