@@ -6,13 +6,13 @@ jobs:
     name: Greeting
     runs-on: ubuntu-latest
     steps:
-       #↓以下を書き換えています。
-       #runは上から順番に実行されます。
+       # ↓以下を書き換えています。
+       # runは上から順番に実行されます。
       - run: python3 --version
       - run: |
           pwd
           ls -l
-          : # コメントアウトの仕方です。
+          # コメントアウトの仕方です。
       - run: |
           pwd
           ls -l
