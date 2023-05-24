@@ -8,16 +8,22 @@ jobs:
     steps:
        # ↓以下を書き換えています。
        # runは上から順番に実行されます。
+      - name: 1 pyver check
       - run: python3 --version
+      - name: 2 pwd_and_ls
       - run: |
           pwd
           ls -l
           # コメントアウトの仕方です。
+      - name: 3 pwd_and_ls
       - run: |
           pwd
           ls -l
+      - name: 4 pwd
       - run: pwd
+      - name: 5 ls
       - run: ls -l
+      - name: 6 install tree
       - run: sudo apt install -y tree
       - run: tree . -a
       - uses: actions/setup-python@v4
