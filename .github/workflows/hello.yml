@@ -10,13 +10,9 @@ jobs:
       - run: pip install pytest
       - run: pip list
       - uses: actions/checkout@v3
-      #--以下のrunの中は2つのrunの行にするとエラーになります。--
-      #- run: |
-      #   mkdir artifactpip
-      #   pip freeze > artifactpip/freezed.txt
-      - run: mkdir artifactpip
-      - run: pip freeze > artifactpip/freezed.txt
-      - uses: actions/upload-artifact@v2
+      - run: mkdir pipdir
+      - run: pip freeze > pipdir/freezed.txt
+      - uses: actions/upload-artifact@v3
         with:
-          name: artifactpip
-          path: artifactpip
+          name: pipdirzip
+          path: pipdir
