@@ -35,12 +35,12 @@ jobs:
         with:
           python-version: '3.10'  # 使用するPythonのバージョンを指定  
       - name: setup pip
-          run: |
-            pip install -U pip
-            pip3 install coverage
-            pip3 install pytest-cov
+        run: |
+          pip install -U pip
+          pip3 install coverage
+          pip3 install pytest-cov
       - name: starttest
-          run: python3 -m pytest --cov --cov-branch --cov-report=html -v 
+        run: python3 -m pytest --cov --cov-branch --cov-report=html -v 
       #--htmlcovディレクトリができているはずなので.zipにしてアーティファクトに上げます。
       - uses: actions/upload-artifact@v3
         with:
