@@ -1,26 +1,3 @@
-# name: Hello, World!
-# on: push
-
-# jobs:
-#   build:
-#     name: Greeting
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v3
-#       - uses: actions/setup-python@v4
-#         with:
-#           python-version: '3.10'  # 使用するPythonのバージョンを指定  
-#       - run: |
-#           pwd
-#       - run: |
-#           ls -l
-#       - run: |
-#           sudo apt install -y tree
-#           tree . -a
-#       - run: pip install -U pip
-#       - run: pip3 install coverage
-#       - run: pip3 install pytest-cov
-#       - run: python3 -m pytest --cov --cov-branch -v
 name: Pytest cov html
 on: push
 
